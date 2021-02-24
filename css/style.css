@@ -1,0 +1,754 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    color: #717171;
+}
+
+/* =============== HEADER ===============*/
+header {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+}
+
+header > p {
+    font-size: 14px;
+}
+
+header > p span {
+    margin: 0 15px;
+}
+
+header > p i:last-child {
+    padding-left: 15px;
+    border-left: 1px dotted rgba(255,255,255,.5);
+}
+
+#movieNavBar .navbar-nav {
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    color: #fff;
+}
+
+#movieNavBar .navbar-nav .nav-item::after {
+    /* #fbbd61,#ec7532 */
+    content: '';
+    display: block;
+    height: 2.5px;
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    width: 0;
+    transition: all 0.5s;
+}  
+
+#movieNavBar .navbar-nav .nav-item:hover::after {
+    width: 100%;
+    box-shadow: 0 0 20px 0 #fbbd61;
+}
+
+#movieNavBar .navbar-nav .nav-item.active::after {
+    width: 100%;
+}
+
+#movieNavBar .navbar-nav .nav-item a {
+    font-weight: 400;
+    display: inline-block;
+    padding: 20px 24px;
+    letter-spacing: 3px;
+    color: #fff;
+    line-height: 10px;
+}
+
+.navbar-brand img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* =============== MOVIE CAROUSEL ===============*/
+#carouselMovieCaptions .carousel-caption {
+    text-align: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-35%);
+}
+
+#carouselMovieCaptions .carousel-caption p:first-child{
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fbbd61;
+}
+
+#carouselMovieCaptions .carousel-caption h1 {
+    font-size: 52px;
+    font-weight: 300;
+    padding: 0;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+#carouselMovieCaptions .carousel-caption p.longtext {
+    font-size: 18px;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+#carouselMovieCaptions .carousel-caption span {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    line-height: 48px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 8px;
+    transform: translateY(2px);
+}
+
+#carouselMovieCaptions .carousel-caption button {
+    padding: 12px 24px;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    border-radius: 30px;
+}
+
+#carouselMovieCaptions .carousel-caption button:focus {
+    outline: none;
+}
+
+#carouselMovieCaptions .carousel-indicators {
+    bottom: 80px;
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 15px;
+}
+
+#carouselMovieCaptions .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: transparent;
+    opacity: 1;
+    box-sizing: border-box;
+}
+
+#carouselMovieCaptions .carousel-indicators li.active {
+    background: #fff;
+}
+
+#carouselMovieCaptions .carousel-item {
+    height: 700px;
+    max-width: 100%;
+}
+
+#carouselMovieCaptions .item1 {
+    background-image: url(../img/hero-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carouselMovieCaptions .item2 {
+    background-image: url(../img/hero-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carouselMovieCaptions .item3 {
+    background-image: url(../img/hero-3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* =============== NEW IN ===============*/
+.newIn {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.newIn h2 {
+    font-size: 18px;
+    margin-bottom: 40px;
+    letter-spacing: 1.7px;
+    color: #ec7532;
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.newIn h2::after {
+    content: '';
+    display: block;
+    width: 125px;
+    height: 4px;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.newIn__img img {
+    display: block;
+    width: 100%;
+}
+
+.newIn__img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.newIn__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.newIn__img:hover .newIn__play {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+} 
+
+.newIn__play a.marvelTrailer i {
+    font-size: 15px;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    line-height: 80px;
+    margin-bottom: 20px;
+    transition: all 0.5s;
+    color: #fff;
+}
+
+.newIn__play a.marvelTrailer i:hover {
+    transform: scale(0.9);
+}
+
+.newIn__play a.read {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.newIn__play p {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.newIn__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180%;
+    height: 100%;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    opacity: 0.8;
+    transform: skewX(30deg) translateX(-125%);
+    transition: all 0.5s;
+}
+
+.newIn__img:hover .newIn__overlay {
+    transform: skewX(30deg) translateX(-22%);
+}
+
+.newIn__movie h4 {
+    font-size: 18px;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.newIn__movie div {
+    text-align: center;
+}
+
+.newIn__movie i {
+    font-size: 18px;
+    display: inline-block;
+    width: 18px;
+    color: #fbbd61;
+}
+
+.newIn__movie i.grey {
+    color: #d8d8d8;
+}
+
+/* =============== SHOW TIME ===============*/
+.showTime {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.showTime .nav-tabs {
+    margin-bottom: 0;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.showTime .nav-tabs .nav-link,
+.showTime .nav-tabs .nav-link.active,
+.showTime .nav-tabs .nav-link:hover {
+    border: #fff;
+}
+
+.showTime .nav-tabs .nav-link {
+    position: relative;
+    font-size: 18px;
+    display: block;
+    padding: 10px 30px 15px;
+    letter-spacing: 1px;
+    color: #4a4a4a;
+}
+
+.showTime .nav-tabs .nav-link::after {
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    left: 0;
+    bottom: 0;
+    display: block;
+    transition: all 0.4s;
+}
+
+.showTime .nav-tabs .nav-link:hover::after {
+    width: 100%;
+}
+
+.showTime .nav-tabs .nav-link.active {
+    color: #ec7532;
+}
+
+.showTime .nav-tabs .nav-link.active::after {
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    width: 100%;
+}
+
+.tabmovieList > div {
+    padding: 45px 0;
+}
+
+#myTabContent img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#myTabContent span.title {
+    color: #ec7532;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#myTabContent h3 {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #101010;
+}
+
+#myTabContent p {
+    margin-bottom: 20px;
+}
+
+#myTabContent a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #ec7532;
+}
+
+#myTabContent a::after {
+    content: ' >';
+    font-weight: 700;
+    color: #ec7532;
+}
+
+#myTabContent .viewingTimes {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+}
+
+#myTabContent .time {
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 7px 10px;
+    letter-spacing: 2px;
+    color: #717171;
+    border-radius: 5px;
+    background-color: #d8d8d8;
+}
+
+#myTabContent .time.past {
+    opacity: 0.5;
+}
+
+#myTabContent .runningTime {
+    font-size: 12px;
+    text-align: right;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+#myTabContent .runningTime .certificate {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 33px;
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    margin-left: 5px;
+    text-align: center;
+    letter-spacing: 0;
+    color: #fff;
+    border-radius: 50%;
+    background: #4a4a4a;
+}
+
+/* =============== COMING SOON ===============*/
+.comingSoon {
+    background-color: #101010;
+}
+
+.comingSoon__bg {
+    background-image: url(../img/slide-3.png);
+    padding-top: 75px;
+    padding-bottom: 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.comingSoon__bg h2 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 40px;
+    letter-spacing: 1.7px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+}
+
+.comingSoon__bg h2::after {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 4px;
+    width: 125px;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    left: 0;
+    bottom: 0;
+}
+
+.comingSoon__bg span.title {
+    color: #ec7532;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.comingSoon__bg h3 {
+    font-size: 34px;
+    margin-bottom: 0;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.comingSoon__bg .rating {
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.comingSoon__bg .rating i {
+    font-size: 14px;
+    color: #fbbd61;
+}
+
+.comingSoon__bg .date {
+    display: inline-block;
+    color: #fff;
+    opacity: 0.75;
+    font-size: 14px;
+}
+
+.comingSoon__bg .date i {
+    margin-right: 5px;
+}
+
+.comingSoon__bg p {
+    margin: 20px 0;
+    color: #fff;
+}
+
+.comingSoon__bg .moreinfo {
+    color: #ec7532;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.comingSoon__bg .moreinfo:hover {
+    color: #fbbd61;
+}
+
+.comingSoon__bg .video {
+    position: relative;
+}
+
+.comingSoon__bg .video img {
+    /* display: block; */
+    width: 100%;
+}
+
+.comingSoon__bg .video i {
+    position: absolute;
+    font-size: 30px;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #ec7532;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 80px;
+    text-align: center;
+    text-indent: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+}
+
+.comingSoon__bg .video:hover i {
+    transform: translate(-50%,-50%) scale(0.9);
+}
+
+/* ------- */
+.comingSoon__list {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.comingSoon__list .comingSoon__item img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.comingSoon__list .comingSoon__item {
+    opacity: 0.35;
+    transition: all 0.5s;
+}
+
+.comingSoon__list .comingSoon__item:hover {
+    opacity: 1;
+}
+
+.comingSoon__item .comingSoon__title h4 {
+    font-size: 16px;
+    margin-top: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.comingSoon__item .comingSoon__title p {
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    opacity: 0.5;
+}
+
+/* =============== CONTACT ===============*/
+.contact .small-padding {
+    padding: 50px 0;
+}
+
+.contact .small-padding p {
+    font-size: 23px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #4a4a4a;
+}
+
+.contact .small-padding .gradient-text {
+    font-size: 46px;
+    font-weight: 400;
+    color: #ec7532;
+    margin-bottom: 0;
+}
+
+/* =============== FOOTER ===============*/
+footer {
+    padding-top: 75px;
+    color: #fff;
+    background-color: #101010;
+    font-weight: 500;
+}
+
+footer h6 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #ec7532;
+    padding-bottom: 20px;
+}
+
+footer ul {
+    list-style: none;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+footer ul li a {
+    font-size: 13px;
+    display: inline-block;
+    padding: 3px 0;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #fbbd61;
+    text-decoration: none;
+}
+
+footer li a i {
+    color: rgba(255,255,255,.3);
+    width: 25px;
+    display: inline-block;
+}
+
+footer .copy-right {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+footer .copy-right p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+footer .copy-right a {
+    color:#fff;
+    transition: 0.5s;
+}
+
+footer .copy-right a:hover {
+    color: #ec7532;
+    text-decoration: none;
+}
+
+/* =============== RESPONSIVE ===============*/
+
+/* nhỏ hơn và bằng 992px */
+@media screen and (max-width: 992px) {
+    /* header */
+    #movieNavBar .navbar-nav .nav-item a {
+        font-size: 14px;
+        padding: 20px 9px;
+        letter-spacing: 2px;
+    }
+
+    .navbar-brand img {
+        display: block;
+        width: 90%;
+    }
+
+    /* new in */
+    .newIn__play a.marvelTrailer i {
+        font-size: 13px;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+    }
+
+    /* show time */
+    #myTabContent .time {
+        padding: 5px 7px;
+    }
+
+    /* footer */
+    footer h6 {
+        font-size: 14px;
+    }
+}
+
+/* nhỏ hơn và bằng 768px */
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+
+    /* show time */
+    .showTime .nav-tabs .nav-link {
+        font-size: 16px;
+        padding: 10px 25px 15px;
+    }
+
+    #myTabContent .time {
+        padding: 5px 5px;
+    }
+
+    #myTabContent .runningTime .certificate {
+        font-size: 13px;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+        margin-left: 0px;
+    }
+}
+
+/* nhỏ hơn và bằng 576px */
+@media screen and (max-width: 576px) {
+
+    /* movie carousel */
+    #carouselMovieCaptions .carousel-caption h1 {
+        font-size: 45px;
+    }
+
+    /* show time */
+    .showTime .nav-tabs .nav-link {
+        font-size: 15px;
+        padding: 10px 15px 15px;
+    }
+}
